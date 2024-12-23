@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select_page</title>
+</head>
+
+<style>
+    body{
+        background-color: #EFF7FC;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .header{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo{
+        width: 371px;
+        height: 57px;
+    }
+    .logo_img{
+        width: 35%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu_div{
+        width: 65%;
+        height: 100%;
+        display: flex;
+        /*background-color: #0011ff;*/
+        flex-direction: row;
+        /*justify-content: center;*/
+        align-items: center;
+    }
+    .menu{
+        width: 20%;
+        text-align: center;
+        font-family: 'Ariel';
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+    .menu:hover{
+        color: #62647D;
+        cursor: pointer;
+    }
+    .search_btn, #search{
+        width: 40px;
+        height: 40px;
+    }
+    .search_btn{
+        all:unset;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <!--logo image-->
+        <div class="logo_img">
+            <img class="logo" src="./images/Logo.png" />  
+        </div>
+        <!--menu division next to logo image-->
+        <div class="menu_div">
+            <a href="main_menu_selection.html" class="menu">Movie</a>
+            <a href="main_menu_selection.html" class="menu">Music</a>
+            <a href="main_menu_selection.html" class="menu">Food</a>
+            <a href="main_menu_selection.html" class="menu">etc.</a>
+            <!--button image-->
+            <button class="search_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 101 101" id="search">
+                    <path d="M63.3 59.9c3.8-4.6 6.2-10.5 6.2-17 0-14.6-11.9-26.5-26.5-26.5S16.5 28.3 16.5 42.9 28.4 69.4 43 69.4c6.4 0 12.4-2.3 17-6.2l20.6 20.6c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4L63.3 59.9zm-20.4 4.7c-12 0-21.7-9.7-21.7-21.7s9.7-21.7 21.7-21.7 21.7 9.7 21.7 21.7-9.7 21.7-21.7 21.7z"></path>
+                  </svg>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

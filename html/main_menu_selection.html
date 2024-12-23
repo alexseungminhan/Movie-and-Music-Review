@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>main_menu_selection</title>
 </head>
+
 <style>
-    body{
+        body{
         background-color: #EFF7FC;
         width: 100%;
         height: 100vh;
@@ -20,6 +21,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+
     }
     .logo{
         width: 371px;
@@ -50,7 +52,6 @@
         font-weight: bold;
         text-decoration: none;
         color: #000;
-
     }
     .menu:hover{
         color: #62647D;
@@ -67,80 +68,45 @@
     .below_header{
         width:100%;
         height:85%;
-        /*background-color: yellow;*/
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .bar_whole{
-        width:25%;
-        height:100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+
     }
-    .bar_name{
-        text-align: center;
+    .selected_category_div{
+        width: 80%;
+
+    }
+
+    .selected_category{
+        padding: 0%;
+        margin: 0%;
+        margin-left: 45px;
+        text-align: left;
         font-family: 'Ariel';
-        font-size: 20px;
+        font-size: 80px;
         font-weight: bold;
         text-decoration: none;
         color: #000;
-
+        border-bottom: solid #000;
     }
-    .bar1, .bar2{
-        width: 60%;
-        height: 70%;
-        border-radius: 10px;
+    .rated_albums{
+        margin-top: 30px;
     }
-    .bar1{
-        background-color: #275475;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .bar2{
-        background-color: #62647D;
-    }
-    .sub_bar1{
-        width: 80%;
-        height: 28%;
-        border-radius: 10px;
-        background-color: aqua;
-        border: none;
+    .album_name{
+        padding: 0%;
+        margin: 0%;
+        margin-left: 45px;
+        text-align: left;
+        font-family: 'Ariel';
+        font-size: 35px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #275475;
         margin-bottom: 15px;
-        padding: 0%;
     }
-    .sub_bar2{
-        width: 80%;
-        height: 28%;
-        border-radius: 10px;
-        background-color: aqua;
-        border: none;
-        margin-bottom: 15px;
-        padding: 0%;
-    }
-    .sub_bar3{
-        width: 80%;
-        height: 28%;
-        border-radius: 10px;
-        background-color: aqua;
-        border: none;
-        padding: 0%;
-
-    }
-    .album_example{
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-    }
-
 </style>
 
 <body>
-    <!--header of page 1-->
     <div class="header">
         <!--logo image-->
         <div class="logo_img">
@@ -161,51 +127,18 @@
         </div>
     </div>
 
-    <div class ="below_header">
-        <div class ="bar_whole">
-
-            <p class="bar_name">Movie</p>
-            <div class="bar1">
-                <button class = "sub_bar1">
-                    <img class="album_example" src="./images/album_cover_example.png" />
-
-                </button>
-
-                <button class = "sub_bar2">
-                    <img class="album_example" src="./images/album_cover_example.png" />
-
-                </button>
-
-                <button class = "sub_bar3">
-                    <img class="album_example" src="./images/album_cover_example.png" />
-
-                </button>
-
-            </div>
+    <div class="below_header">
+        <div class="selected_category_div">
+             <p class="selected_category">Movie</p>
         </div>
-        <div class ="bar_whole">
-
-            <p class="bar_name">Music</p>
-            <div class="bar2">
-
-            </div>
-        </div>
-        <div class ="bar_whole">
-
-            <p class="bar_name">Food</p>
-            <div class="bar1">
-
-            </div>
-        </div>
-        <div class ="bar_whole">
-
-            <p class="bar_name">etc.</p>
-            <div class="bar2">
-
-            </div>
-        </div>
+        <div class="rated_albums">
+            <a href="select_page.html" class="album_name">Taylor Swift, ‘Red’ / 2012 / 8.5 out of 10</p>
+            <a href="select_page.html" class="album_name">
+                Metallica, ‘Master of Puppets’ / 1986 / 8.5 out of 10</p>
+            <a href="select_page.html" class="album_name">AC/DC, ‘Back in Black’ / 1980 / 8.5 out of 10</p>
+            <a href="select_page.html" class="album_name">Kanye West, ‘The College Dropout’ / 2004 / 8.5 out of 10</p>
+         </div>
     </div>
-
-
 </body>
+
 </html>
