@@ -65,6 +65,170 @@
         all:unset;
         display: inline-block;
     }
+
+    .whole_screen{
+        display: flex;
+        width: 100%;
+        height: 80%;
+        background-color: aqua;
+
+    }
+    .left_side{
+        display:flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        background-color: yellow;
+        
+    }
+    .right_side{
+        display:flex;
+        flex-direction: column;
+        width: 20%;
+        height: 100%;
+        background-color: blue;
+    }
+    .first_row{
+        display: flex;
+        width: 100%;
+        height: 60%;
+    }
+
+    .album_cover{
+        width:23%;
+        height:80%;
+        /*background-color: green;*/
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    .album_example{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    
+    .album_description_and_score{
+        width:62%;
+        height:80%;
+        background-color: #62647D;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 10px;
+        margin-left: 70px;
+        margin-top: 10px;
+    }
+    .album_description{
+        width: 60%;
+        height:90%;
+        /*background-color: #a7daff;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+    }
+    .album_score_and_edit{
+        width: 40%;
+        height:90%;
+        /*background-color: #a7daff;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+    }
+
+    .album_score{
+        width: 100%;
+        height:60%;
+        /*background-color: green;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .album_edit{
+        width: 100%;
+        height: 40%;
+        /*background-color: yellow;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+    }
+    .edit{
+        all:unset;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-right: 35px;
+        margin-bottom: 20px;
+        
+    }
+
+    .album_name{
+        padding: 0%;
+        margin: 0%;
+        margin-left: 45px;
+        text-align: left;
+        font-family: 'Ariel';
+        font-size: 35px;
+        font-weight: bold;
+        text-decoration: none;
+        /*color: #275475;*/
+        margin-bottom: 15px;
+    }
+    .album_score_font{
+        width: 100%;
+        text-align: center;
+        font-family: 'Ariel';
+        font-size: 65px;
+        font-weight: bold;
+        text-decoration: none;
+        /*color: #275475;*/
+        margin-left: 70px;
+    }
+    .second_row{
+        display: flex;
+        flex-direction:row;
+        width: 100%;
+        height: 40%;
+
+    }
+    .comment{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width:90%;
+        height:90%;
+        padding: 0%;
+        margin: 0%;
+        margin-left: 35px;
+        text-align: left;
+        font-family: 'Ariel';
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+        /*color: #275475;*/
+        margin-bottom: 15px;
+        background-color: #D9D9D9;
+    }
+    .comment_edit{
+        width:10%;
+        height:90%;
+        display: flex;
+        align-items: end;
+        justify-content: flex-end;
+        background-color: #D9D9D9;
+  
+    }
+
+
 </style>
 
 <body>
@@ -87,6 +251,61 @@
             </button>
         </div>
     </div>
+    
+    <div class ='whole_screen'>
+
+        <div class ='left_side'>
+
+            <div class = "first_row">
+                <div class = "album_cover">
+                    <img class="album_example" src="./images/album_cover_example.png" />
+                </div>
+                <div class = "album_description_and_score">
+                    <div class = "album_description">
+                        <p class="album_name">Pharmacy</p>
+                        <p class="album_name">Galantis</p>
+                        <p class="album_name">2015</p>
+                        <p class="album_name">Electro-house</p>
+                    </div>
+                    <div class = "album_score_and_edit">
+                        <div class = "album_score">
+                            <p class="album_score_font">8.9</p>
+                        </div>
+                        <div class ="album_edit">
+                            <button class = "edit">
+       
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="edit">
+                                    <path d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path>
+                                    <path d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path>
+                                  </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "second_row">
+                <div class ="comment">
+                    <p class="write_comment">write</p>
+                </div>
+                <div class = "comment_edit">
+                    <button class = "edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="edit">
+                            <path d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path>
+                            <path d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path>
+                          </svg>
+                    </button>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="right_side">
+            <p class="temp">temp</p>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
