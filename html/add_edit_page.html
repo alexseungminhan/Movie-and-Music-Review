@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add_edit_page</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url("./.font/BMJUA.ttf") format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    body{
+        background-color: #EFF7FC;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .header{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        width: 371px;
+        height: 57px;
+    }
+    .logo_img{
+        width: 35%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu_div{
+        width: 65%;
+        height: 100%;
+        display: flex;
+        /*background-color: #0011ff;*/
+        flex-direction: row;
+        /*justify-content: center;*/
+        align-items: center;
+    }
+    .menu{
+        width: 20%;
+        text-align: center;
+        font-family: 'CustomFont';
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+
+    }
+    .menu:hover{
+        color: #62647D;
+        cursor: pointer;
+    }
+    .search_btn, #search{
+        width: 40px;
+        height: 40px;
+    }
+    .search_btn{
+        all:unset;
+        display: inline-block;
+    }
+    .row1{
+        display: flex;
+        width: 100%;
+        height: 45%;
+
+    }
+    .box1{
+        height: 100%;
+        width: 25%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box2{
+        height: 100%;
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box3{
+        height: 100%;
+        width: 20%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .custom_btn{
+        display: inline-block;
+        cursor: pointer;
+        width: 120px;
+        height: 120px;
+    }
+    .custom_btn svg:hover{
+        fill:red;
+
+    }
+    #fileinput{
+        display: none;
+    }
+    .upload_box{
+        width:80%;
+        height:80%;
+        border-radius: 10px;
+        background-color: #D9D9D9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .upload_file{
+        font-family:"CustomFont";
+        font-size: larger;
+    }
+    .text_box{
+        width:90%;
+        height:80%;
+        border-radius: 10px;
+        background-color: #62647D;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .text_box_class{
+        all:unset;
+        width:90%;
+        height:20%;
+        font-size: 25px;
+        color:white;
+        font-family: 'CustomFont';
+        
+    }
+    .text_box_class::placeholder{
+        color:#CEC8C8;
+    }
+    .dropdown{
+        width: 90%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .dropdown_btn{
+        all:unset;
+        display: inline-block;
+        text-align: center;
+        background-color: #D9D9D9;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 20%;
+        width: 100%;
+        font-family: 'CustomFont';
+
+    }
+    .content_dropdown{
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        max-height: 0;
+        text-align: center;
+        background-color: #D9D9D9;
+        /*height: 60%;*/
+        width: 100%;
+        font-family: 'CustomFont';
+        transition: max-height 0.3s ease-out;
+    }
+    .row2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 79%;
+        height: 15%;
+    
+    }
+    .row3{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 25%;
+
+    }
+    .slider{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+
+    }
+    .score_text_box{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+
+    }
+    .score{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 20%;
+        background-color: none;
+        accent-color: #D9D9D9;
+    }
+
+    .score_text{
+        text-align: center;
+        width: 80%;
+        border: solid;
+        border-color: #000;
+        border-radius: 10px;
+        font-size: 45px;
+        color:red;
+        font-family: 'CustomFont';
+        
+    }
+    .write_box{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+
+    }
+    .save{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+
+    }
+    .save_file_btn{
+        all: unset;
+        width: 100px;
+        height: 100px;
+    }
+    .content_ex:hover{
+        color: red;
+        cursor: pointer;
+    }
+    .save_file_btn:hover{
+        color: red;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <!--header of page 1-->
+    <div class="header">
+        <!--logo image-->
+        <div class="logo_img">
+            <img class="logo" src="./images/Logo.png" />  
+        </div>
+        <!--menu division next to logo image-->
+        <div class="menu_div">
+            <a href="main_menu_selection.html" class="menu">Movie</a>
+            <a href="main_menu_selection.html" class="menu">Music</a>
+            <a href="main_menu_selection.html" class="menu">Food</a>
+            <a href="main_menu_selection.html" class="menu">etc.</a>
+            <!--button image-->
+            <button class="search_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 101 101" id="search">
+                    <path d="M63.3 59.9c3.8-4.6 6.2-10.5 6.2-17 0-14.6-11.9-26.5-26.5-26.5S16.5 28.3 16.5 42.9 28.4 69.4 43 69.4c6.4 0 12.4-2.3 17-6.2l20.6 20.6c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4L63.3 59.9zm-20.4 4.7c-12 0-21.7-9.7-21.7-21.7s9.7-21.7 21.7-21.7 21.7 9.7 21.7 21.7-9.7 21.7-21.7 21.7z"></path>
+                  </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class ="row1">
+        <div class = "box1">
+            <input type="file" id="fileinput"/>
+            <div class = "upload_box">
+                <h4 class="upload_file">Upload File</h4>
+                <label for="fileinput" class="custom_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="upload">
+                        <path d="M8.71,7.71,11,5.41V15a1,1,0,0,0,2,0V5.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-4-4a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-4,4A1,1,0,1,0,8.71,7.71ZM21,12a1,1,0,0,0-1,1v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V13a1,1,0,0,0-2,0v6a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12Z"></path>
+                    </svg>
+                </label>
+            </div>
+          
+        </div>
+
+        <div class="box2">
+            <div class = "text_box">
+                <input type = "text" class = "text_box_class" placeholder="Enter album name"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter artist name"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter album year"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter album genre"/>
+
+            </div>
+
+        </div>
+
+        <div class = "box3">
+            <div class="dropdown">
+                <button class="dropdown_btn"><p>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  +</p></button>
+                <div class="content_dropdown">
+                    <p class="content_ex">Movie</p>
+                    <p class="content_ex">Music</p>
+                    <p class="content_ex">Food</p>
+                    <p class="content_ex">etc.</p>
+                </div>  
+            </div>
+        </div>
+
+    </div>
+
+    <div class = "row2">
+        <div class="slider">
+            <input type="range" min="0" max="10" value="0" class="score" step="0.1"/>
+        </div>
+        <div class = "score_text_box">
+            <p class="score_text">0</p>
+        </div>
+
+    </div>
+
+    <div class = "row3">
+        <div class = "write_box">
+            <div class = "text_box">
+                <input type = "text" class = "text_box_class" placeholder="Write"/>
+
+            </div>
+
+
+        </div>
+        <div class = "save">
+            <div class = "save_file">
+                <button class="save_file_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="save">
+                        <path d="m20.71 9.29-6-6a1 1 0 0 0-.32-.21A1.09 1.09 0 0 0 14 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-8a1 1 0 0 0-.29-.71ZM9 5h4v2H9Zm6 14H9v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1Zm4-1a1 1 0 0 1-1 1h-1v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.41l4 4Z"></path>
+                      </svg>
+                    </button>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        const dropdown_btn = document.querySelector('.dropdown_btn');
+        const content_dropdown = document.querySelector('.content_dropdown');
+        dropdown_btn.addEventListener('click',()=>{
+            if (content_dropdown.style.maxHeight){
+                content_dropdown.style.maxHeight = null;
+            }else{
+                content_dropdown.style.maxHeight = content_dropdown.scrollHeight + 'px';
+            }
+        });
+
+        const score = document.querySelector('.score');
+        const score_text = document.querySelector('.score_text');
+        score.addEventListener('input',()=>{
+            score_text.textContent = score.value;
+        });
+
+    </script>
+</body>

@@ -7,6 +7,12 @@
 </head>
 
 <style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url("./.font/BMJUA.ttf") format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
     body{
         background-color: #EFF7FC;
         width: 100%;
@@ -47,7 +53,7 @@
     .menu{
         width: 20%;
         text-align: center;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
@@ -70,7 +76,7 @@
         display: flex;
         width: 100%;
         height: 80%;
-        background-color: aqua;
+        
 
     }
     .left_side{
@@ -78,7 +84,7 @@
         flex-direction: column;
         width: 80%;
         height: 100%;
-        background-color: yellow;
+        
         
     }
     .right_side{
@@ -86,7 +92,10 @@
         flex-direction: column;
         width: 20%;
         height: 100%;
-        background-color: blue;
+
+        align-items: center;
+        /*justify-content: center;*/
+        
     }
     .first_row{
         display: flex;
@@ -175,7 +184,7 @@
         margin: 0%;
         margin-left: 45px;
         text-align: left;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 35px;
         font-weight: bold;
         text-decoration: none;
@@ -185,7 +194,7 @@
     .album_score_font{
         width: 100%;
         text-align: center;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 65px;
         font-weight: bold;
         text-decoration: none;
@@ -200,6 +209,7 @@
 
     }
     .comment{
+
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -210,7 +220,7 @@
         margin: 0%;
         margin-left: 35px;
         text-align: left;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 25px;
         font-weight: bold;
         text-decoration: none;
@@ -227,7 +237,58 @@
         background-color: #D9D9D9;
   
     }
+    .bar{
+        width:80%;
+        height:80%;
+        border-radius: 10px;
+        background-color: #275475;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .sub_bar1{
+        width: 80%;
+        height: 28%;
+        border-radius: 10px;
+        
+        border: none;
+        margin-bottom: 15px;
+        padding: 0%;
+    }
+    .sub_bar2{
+        width: 80%;
+        height: 28%;
+        border-radius: 10px;
+        
+        border: none;
+        margin-bottom: 15px;
+        padding: 0%;
+    }
+    .sub_bar3{
+        width: 80%;
+        height: 28%;
+        border-radius: 10px;
+        
+        border: none;
+        padding: 0%;
 
+    }
+    .plus_button{
+        all:unset;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+    }
+
+    .plus_button:hover{
+        cursor: pointer;
+    }
+    .write_comment{
+        padding: 20px;
+    }
 
 </style>
 
@@ -239,10 +300,10 @@
         </div>
         <!--menu division next to logo image-->
         <div class="menu_div">
-            <a href="main_menu_selection.html" class="menu">Movie</a>
-            <a href="main_menu_selection.html" class="menu">Music</a>
-            <a href="main_menu_selection.html" class="menu">Food</a>
-            <a href="main_menu_selection.html" class="menu">etc.</a>
+            <a href="main_menu_selection.html?category=1" class="menu">Movie</a>
+            <a href="main_menu_selection.html?category=0" class="menu">Music</a>
+            <a href="main_menu_selection.html?category=2" class="menu">Food</a>
+            <a href="main_menu_selection.html?category=3" class="menu">etc.</a>
             <!--button image-->
             <button class="search_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 101 101" id="search">
@@ -258,18 +319,18 @@
 
             <div class = "first_row">
                 <div class = "album_cover">
-                    <img class="album_example" src="./images/album_cover_example.png" />
+                    <img class="album_example" src="./images/album_cover_example.png"  id="main_img"/>
                 </div>
                 <div class = "album_description_and_score">
                     <div class = "album_description">
-                        <p class="album_name">Pharmacy</p>
-                        <p class="album_name">Galantis</p>
-                        <p class="album_name">2015</p>
-                        <p class="album_name">Electro-house</p>
+                        <p class="album_name" id="text1">Pharmacy</p>
+                        <p class="album_name" id="text2">Galantis</p>
+                        <p class="album_name" id="text3">2015</p>
+                        <p class="album_name" id="text4">Electro-house</p>
                     </div>
                     <div class = "album_score_and_edit">
                         <div class = "album_score">
-                            <p class="album_score_font">8.9</p>
+                            <p class="album_score_font" id="score">8.9</p>
                         </div>
                         <div class ="album_edit">
                             <button class = "edit">
@@ -286,7 +347,7 @@
 
             <div class = "second_row">
                 <div class ="comment">
-                    <p class="write_comment">write</p>
+                    <p class="write_comment" id="comment">write</p>
                 </div>
                 <div class = "comment_edit">
                     <button class = "edit">
@@ -301,10 +362,101 @@
         </div>
 
         <div class="right_side">
-            <p class="temp">temp</p>
+            
+            <div class="bar">
+                <a href="select_page.html" class = "sub_bar1" id="link1">
+                    <img class="album_example" src="./images/album_cover_example.png" id="img1"/>
+
+                </a>
+
+                <a href="select_page.html" class = "sub_bar2" id="link2">
+                    <img class="album_example" src="./images/album_cover_example.png" id="img2"/>
+
+                </a>
+
+                <a href="select_page.html" class = "sub_bar3" id="link3">
+                    <img class="album_example" src="./images/album_cover_example.png" id="img3"/>
+
+                </a>
+            </div>
+    
+            <div class = "plus">
+                <button class = "plus_button">
+    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="plus">
+                        <g>
+                          <g>
+                            <rect width="24" height="24" opacity="0"></rect>
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
+                            <path d="M15 11h-2V9a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2z"></path>
+                          </g>
+                        </g>
+                      </svg>
+                    
+                </button>
+            </div>
         </div>
 
     </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dataIndex = parseInt(urlParams.get('data'));
+        const categoryIndex = parseInt(urlParams.get('category'));
+        //console.log(categoryIndex);
+
+        const images = [["img_example/Music/cowboy carter.jpg", "img_example/Music/edm.jpg", 
+                        "img_example/Music/piano.jpg", "img_example/Music/guitar.jpg"],
+                        ["img_example/Movie/joker.jpg","img_example/Movie/avengers.jpg",
+                        "img_example/Movie/star wars.jpg","img_example/Movie/war.jpg"],
+                        ["img_example/Food/sushi.jpg","img_example/Food/in n out.jpg",
+                        "img_example/Food/chicken.jpg","img_example/Food/bbq.jpg"],
+                        ["img_example/etc/london.jpg","img_example/etc/los angeles.jpg",
+                        "img_example/etc/new york.jpg","img_example/etc/tokyo.jpg"] ]
+
+        const image_set = [[1,2,3] ,[0,2,3], [0,1,3], [0,1,2]]
+
+        const text_set1 = [["Cowboy Carter", "The Aviary","Chopin...Scherzi", "Back in Black"],
+        ["Joker, Todd Phillips","Avengers: Endgame, Russo Brothers","Star Wars: Episode III - Revenge of the Sith, George Lucas","Black Hawk Down, Ridley Scott"],
+        ["Nobu, Los Angeles","In-N-Out Burger, Huntington Park","Kyochon Chicken, Los Angeles","Park's BBQ, Los Angeles"],
+        ["London, UK","Los Angeles, CA, USA","New York City, NY, USA","Tokyo, Japan"]]
+        const text_set2 = [["Beyonce", "Galantis", "Seong-Jin Cho", "AC/DC"],["","","",""],["","","",""],["","","",""]]
+        const text_set3 = [["2024", "2017", "2021", "1980"],["","","",""],["","","",""],["","","",""]]
+        const text_set4 = [["Country", "Electronic" ,"Classical", "Rock"],["","","",""],["","","",""],["","","",""]]
+
+        const score_set = [["8.4" ,"6.4", "9.0", "8.8"],["","","",""],["","","",""],["","","",""]]
+
+        const comment_set = [["The follow-up to Renaissance is a powerful and ambitious country album cast \
+        in the singular mold of Beyonce. She asserts her rightful place in the genre as only a pop star of \
+        her incredible talent and influence can do.(Pitchfork)", "Swedish pop duo Galantis are gleeful vocal \
+        manipulators who have written for the likes of Britney Spears and Icona Pop. On their new LP, \
+        their maximalism takes on the halting sounds of tropical house. (Pitchfork)", "The drama, lyricism, rhythm \
+        and articulation which different pianists bring to the four Scherzi are as individual to the \
+        set as the four scherzi to each other. Cho dazzles with his technical prowess throughout, \
+        exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)", "For many bands,\
+         the sudden and horrific death of their lead singer at the peak of their popularity would be a \
+         career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)"]
+        ,["","","",""],["","","",""],["","","",""]]
+         
+        document.getElementById("main_img").src = images[categoryIndex][dataIndex];
+        document.getElementById("text1").innerText = text_set1[categoryIndex][dataIndex];
+        document.getElementById("text2").innerText = text_set2[categoryIndex][dataIndex];
+        document.getElementById("text3").innerText = text_set3[categoryIndex][dataIndex];
+        document.getElementById("text4").innerText = text_set4[categoryIndex][dataIndex];
+
+        document.getElementById("score").innerText = score_set[categoryIndex][dataIndex];
+
+        document.getElementById("comment").innerText = comment_set[categoryIndex][dataIndex];
+
+        const imageID = ['img1','img2','img3'];
+
+        const linkId = ['link1','link2','link3'];
+        console.log(images[categoryIndex][dataIndex]);
+        for(let i = 0; i < 3 ;i++){
+            document.getElementById(imageID[i]).src = images[categoryIndex][image_set[dataIndex][i]];
+            document.getElementById(linkId[i]).href = "select_page.html?data=" + image_set[dataIndex][i] + "&category="+categoryIndex;
+        }
+        
+    </script>
 
 </body>
 

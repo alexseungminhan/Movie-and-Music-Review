@@ -7,7 +7,13 @@
 </head>
 
 <style>
-        body{
+    @font-face {
+        font-family: 'CustomFont';
+        src: url("./.font/BMJUA.ttf") format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    body{
         background-color: #EFF7FC;
         width: 100%;
         height: 100vh;
@@ -45,13 +51,16 @@
         align-items: center;
     }
     .menu{
+        all:unset;
         width: 20%;
         text-align: center;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
         color: #000;
+
+        
     }
     .menu:hover{
         color: #62647D;
@@ -82,7 +91,7 @@
         margin: 0%;
         margin-left: 45px;
         text-align: left;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 80px;
         font-weight: bold;
         text-decoration: none;
@@ -91,13 +100,15 @@
     }
     .rated_albums{
         margin-top: 30px;
+        display:flex;
+        flex-direction: column;
     }
     .album_name{
         padding: 0%;
         margin: 0%;
         margin-left: 45px;
         text-align: left;
-        font-family: 'Ariel';
+        font-family: 'CustomFont';
         font-size: 35px;
         font-weight: bold;
         text-decoration: none;
@@ -114,10 +125,10 @@
         </div>
         <!--menu division next to logo image-->
         <div class="menu_div">
-            <a href="main_menu_selection.html" class="menu">Movie</a>
-            <a href="main_menu_selection.html" class="menu">Music</a>
-            <a href="main_menu_selection.html" class="menu">Food</a>
-            <a href="main_menu_selection.html" class="menu">etc.</a>
+            <button href="main_menu_selection.html" class="menu" onclick="click_movie()" id="movie_btn">Movie</button>
+            <button href="main_menu_selection.html" class="menu" onclick="click_music()" id="music_btn">Music</button>
+            <button href="main_menu_selection.html" class="menu" onclick="click_food()" id="food_btn">Food</button>
+            <button href="main_menu_selection.html" class="menu" onclick="click_etc()" id="etc_btn">etc.</button>
             <!--button image-->
             <button class="search_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 101 101" id="search">
@@ -129,16 +140,134 @@
 
     <div class="below_header">
         <div class="selected_category_div">
-             <p class="selected_category">Movie</p>
+             <p class="selected_category" id="category">Movie</p>
         </div>
         <div class="rated_albums">
-            <a href="select_page.html" class="album_name">Taylor Swift, ‘Red’ / 2012 / 8.5 out of 10</p>
-            <a href="select_page.html" class="album_name">
-                Metallica, ‘Master of Puppets’ / 1986 / 8.5 out of 10</p>
-            <a href="select_page.html" class="album_name">AC/DC, ‘Back in Black’ / 1980 / 8.5 out of 10</p>
-            <a href="select_page.html" class="album_name">Kanye West, ‘The College Dropout’ / 2004 / 8.5 out of 10</p>
+            <a href="select_page.html?data=0" class="album_name" id="example1">Beyonce, Cowboy Carter / 2024 / 8.4 out of 10</a>
+            <a href="select_page.html?data=1" class="album_name" id="example2">Galantis, The Aviary / 2017 / 6.4 out of 10</a>
+            <a href="select_page.html?data=2" class="album_name" id="example3">Seong-Jin Cho, Chopin: Piano Concerto No. 2; Scherzi / 2021 / 9.0 out of 10</a>
+            <a href="select_page.html?data=3" class="album_name" id="example4">AC/DC, Back in Black / 1980 / 8.8 out of 10</a>
          </div>
     </div>
+
+    <script>
+        function click_music(){
+            const button_id = ["music_btn","movie_btn", "food_btn", "etc_btn"];
+            const colors = ["#FFEB97", "#000","#000","#000"] 
+            
+            for(let i =0;i<button_id.length;i++){
+                const btn = document.getElementById(button_id[i]);
+                btn.style.color = colors[i];
+                //console.log(button_id[i] + colors[i])
+            }
+
+
+            const category = document.getElementById("category");
+            category.innerText = "Music";
+            
+            list_a = ["Beyonce, Cowboy Carter / 2024 / 8.4 out of 10",
+            "Galantis, The Aviary / 2017 / 6.4 out of 10",
+            "Seong-Jin Cho, Chopin: Piano Concerto No. 2; Scherzi / 2021 / 9.0 out of 10",
+            "AC/DC, Back in Black / 1980 / 8.8 out of 10"]
+
+            for(let i =0;i<list_a.length;i++){
+                const example = document.getElementById("example"+(i+1));
+                example.innerText = list_a[i];
+                example.href ="select_page.html?data="+i+"&category=0";
+            }
+        }
+
+        function click_movie(){
+
+            const button_id = ["music_btn","movie_btn", "food_btn", "etc_btn"];
+            const colors = ["#000","#FFEB97","#000","#000"] 
+            
+            for(let i =0;i<button_id.length;i++){
+                const btn = document.getElementById(button_id[i]);
+                btn.style.color = colors[i];
+                //console.log(button_id[i] + colors[i])
+            }
+
+
+            const category = document.getElementById("category");
+            category.innerText = "Movie";
+            
+            list_a = ["Joker, Todd Phillips / 2019 / 8.9 out of 10",
+            "Avengers: Endgame, Russo Brothers / 2019 / 8.3 out of 10",
+            "Star Wars: Episode III - Revenge of the Sith, George Lucas / 2005 / 8.0 out of 10",
+            "Black Hawk Down, Ridley Scott / 2001 / 7.9 out of 10"]
+
+            for(let i =0;i<list_a.length;i++){
+                const example = document.getElementById("example"+(i+1));
+                example.innerText = list_a[i];
+                example.href ="select_page.html?data="+i+"&category=1"
+            }
+        }
+
+        function click_food(){
+            const button_id = ["music_btn","movie_btn", "food_btn", "etc_btn"];
+            const colors = [ "#000","#000","#FFEB97","#000"] 
+            
+            for(let i =0;i<button_id.length;i++){
+                const btn = document.getElementById(button_id[i]);
+                btn.style.color = colors[i];
+                //console.log(button_id[i] + colors[i])
+            }
+
+
+            const category = document.getElementById("category");
+            category.innerText = "Food";
+            
+            list_a = ["Nobu, Los Angeles / Japanese / 4.3 out of 5",
+            "In-N-Out Burger, Huntington Park / Hamburger / 4.6 out of 5",
+            "Kyochon Chicken, Los Angeles / Fried Chicken / 4.0 out of 5",
+            "Park's BBQ, Los Angeles / Korean Barbecue / 4.4 out of 5"]
+
+            for(let i =0;i<list_a.length;i++){
+                const example = document.getElementById("example"+(i+1));
+                example.innerText = list_a[i];
+                example.href ="select_page.html?data="+i+"&category=2"
+            }
+        }
+
+        function click_etc(){
+            const button_id = ["music_btn","movie_btn", "food_btn", "etc_btn"];
+            const colors = [ "#000","#000","#000","#FFEB97"] 
+            
+            for(let i =0;i<button_id.length;i++){
+                const btn = document.getElementById(button_id[i]);
+                btn.style.color = colors[i];
+                //console.log(button_id[i] + colors[i])
+            }
+
+
+            const category = document.getElementById("category");
+            category.innerText = "etc.";
+            
+            list_a = ["London, UK / UTC+0 / 4.0 out of 5",
+            "Los Angeles, CA, USA / UTC−08:00 / 4.5 out of 5",
+            "New York City, NY, USA / UTC−05:00 / 4.0 out of 5",
+            "Tokyo, Japan / UTC+09:00 / 4.8 out of 5"]
+
+            for(let i =0;i<list_a.length;i++){
+                const example = document.getElementById("example"+(i+1));
+                example.innerText = list_a[i];
+                example.href ="select_page.html?data="+i+"&category=3"
+            }
+        }
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+           
+            if(urlParams.has("category")){
+                 const dataIndex = parseInt(urlParams.get('category'));
+                 if(dataIndex==0) click_music();
+                 else if(dataIndex==1) click_movie();
+                 else if(dataIndex==2) click_food();
+                 else click_etc();
+            }
+            else click_movie();
+        }
+    </script>
 </body>
 
 </html>
