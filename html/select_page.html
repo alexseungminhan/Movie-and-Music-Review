@@ -214,7 +214,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width:90%;
+        width:93.5%;
         height:90%;
         padding: 0%;
         margin: 0%;
@@ -227,6 +227,7 @@
         /*color: #275475;*/
         margin-bottom: 15px;
         background-color: #D9D9D9;
+        border-radius: 10px;
     }
     .comment_edit{
         width:10%;
@@ -296,7 +297,7 @@
     <div class="header">
         <!--logo image-->
         <div class="logo_img">
-            <img class="logo" src="./images/Logo.png" />  
+            <a href="main.html"><img class="logo" src="./images/Logo.png" /></a> 
         </div>
         <!--menu division next to logo image-->
         <div class="menu_div">
@@ -332,15 +333,15 @@
                         <div class = "album_score">
                             <p class="album_score_font" id="score">8.9</p>
                         </div>
-                        <div class ="album_edit">
-                            <button class = "edit">
-       
+                        
+                        <a href = "add_edit_page.html" class ="album_edit">
+                            <div class = "edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="edit">
                                     <path d="M3.5,24h15A3.51,3.51,0,0,0,22,20.487V12.95a1,1,0,0,0-2,0v7.537A1.508,1.508,0,0,1,18.5,22H3.5A1.508,1.508,0,0,1,2,20.487V5.513A1.508,1.508,0,0,1,3.5,4H11a1,1,0,0,0,0-2H3.5A3.51,3.51,0,0,0,0,5.513V20.487A3.51,3.51,0,0,0,3.5,24Z"></path>
                                     <path d="M9.455,10.544l-.789,3.614a1,1,0,0,0,.271.921,1.038,1.038,0,0,0,.92.269l3.606-.791a1,1,0,0,0,.494-.271l9.114-9.114a3,3,0,0,0,0-4.243,3.07,3.07,0,0,0-4.242,0l-9.1,9.123A1,1,0,0,0,9.455,10.544Zm10.788-8.2a1.022,1.022,0,0,1,1.414,0,1.009,1.009,0,0,1,0,1.413l-.707.707L19.536,3.05Zm-8.9,8.914,6.774-6.791,1.4,1.407-6.777,6.793-1.795.394Z"></path>
-                                  </svg>
-                            </button>
-                        </div>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -349,6 +350,7 @@
                 <div class ="comment">
                     <p class="write_comment" id="comment">write</p>
                 </div>
+                <!--
                 <div class = "comment_edit">
                     <button class = "edit">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="edit">
@@ -357,6 +359,7 @@
                           </svg>
                     </button>
                 </div>
+                -->
             </div>
         
         </div>
@@ -402,8 +405,14 @@
         const urlParams = new URLSearchParams(window.location.search);
         const dataIndex = parseInt(urlParams.get('data'));
         const categoryIndex = parseInt(urlParams.get('category'));
-        //console.log(categoryIndex);
+        console.log(categoryIndex);
+        window.onpageshow = function(event){
+            if(event.persisted || (window.performance && window.performance.navigation.type == 2)){
+                location.href = "main_menu_selection.html?category="+categoryIndex;
 
+            }
+        }
+        
         const images = [["img_example/Music/cowboy carter.jpg", "img_example/Music/edm.jpg", 
                         "img_example/Music/piano.jpg", "img_example/Music/guitar.jpg"],
                         ["img_example/Movie/joker.jpg","img_example/Movie/avengers.jpg",
@@ -416,14 +425,17 @@
         const image_set = [[1,2,3] ,[0,2,3], [0,1,3], [0,1,2]]
 
         const text_set1 = [["Cowboy Carter", "The Aviary","Chopin...Scherzi", "Back in Black"],
-        ["Joker, Todd Phillips","Avengers: Endgame, Russo Brothers","Star Wars: Episode III - Revenge of the Sith, George Lucas","Black Hawk Down, Ridley Scott"],
-        ["Nobu, Los Angeles","In-N-Out Burger, Huntington Park","Kyochon Chicken, Los Angeles","Park's BBQ, Los Angeles"],
-        ["London, UK","Los Angeles, CA, USA","New York City, NY, USA","Tokyo, Japan"]]
-        const text_set2 = [["Beyonce", "Galantis", "Seong-Jin Cho", "AC/DC"],["","","",""],["","","",""],["","","",""]]
-        const text_set3 = [["2024", "2017", "2021", "1980"],["","","",""],["","","",""],["","","",""]]
-        const text_set4 = [["Country", "Electronic" ,"Classical", "Rock"],["","","",""],["","","",""],["","","",""]]
+        ["Joker","Avengers: Endgame","Star Wars: Episode III ","Black Hawk Down"],
+        ["Nobu","In-N-Out Burger","Kyochon Chicken","Park's BBQ"],
+        ["London","Los Angeles,","New York City","Tokyo"]]
+        const text_set2 = [["Beyonce", "Galantis", "Seong-Jin Cho", "AC/DC"],["Todd Phillips","Russo Brothers","George Lucas","Ridley Scott"],
+        ["Los Angeles","Huntington Park","Los Angeles","Los Angeles"],["UK","CA, USA","NY, USA","Japan"]]
+        const text_set3 = [["2024", "2017", "2021", "1980"],["2019","2019","2005","2001"],["noburestaurants.com","www.in-n-out.com","www.kyochonus.com","parksbbq.com"],
+        ["Population: 8.8 million","Population: 3.8 million","Population: 8.2 million","Population: 14.1 million"]]
+        const text_set4 = [["Country", "Electronic" ,"Classical", "Rock"],["Comedy/Romance","Action/Sci-fi","Sci-fi/Action","War/Action"],
+        ["Japanese","Hamburger","Fried Chicken","Korean Barbecue"],["UTC+0","UTC−08:00","UTC−05:00","UTC+09:00"]]
 
-        const score_set = [["8.4" ,"6.4", "9.0", "8.8"],["","","",""],["","","",""],["","","",""]]
+        const score_set = [["8.4" ,"6.4", "9.0", "8.8"],["8.9","8.3","8.0","7.9"],["4.3","4.6","4.0","4.4"],["4.0","4.5","4.0","4.8"]]
 
         const comment_set = [["The follow-up to Renaissance is a powerful and ambitious country album cast \
         in the singular mold of Beyonce. She asserts her rightful place in the genre as only a pop star of \
@@ -435,7 +447,25 @@
         exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)", "For many bands,\
          the sudden and horrific death of their lead singer at the peak of their popularity would be a \
          career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)"]
-        ,["","","",""],["","","",""],["","","",""]]
+        ,["Subtlety is not Phillips’s strong point. What he does have is an eye for a well-chosen location, \
+        an ear for a provocative line of dialogue and a finger on the pulse of very marketable, confrontational \
+        (if also “cynical”) entertainment. The Observer (UK)","Generous in humor, spirit and sentimentality, \
+        Anthony and Joe Russo's Endgame is a surprisingly full feast of blockbuster-making that, through some \
+        time-traveling magic, looks back nostalgically at Marvel's decade of world domination. (AP)","Emerges as the best in the overall series since \
+        \"The Empire Strikes Back\" (Variety)","I've rarely seen so selfless a collection of performances and, \
+        in a war movie, so general an absence of rhetoric or guff. (The New Yorker)"],["Nobu Matsuhisa is a globally-renowned chef, \
+        most well-known for his unique take on traditional Japanese cuisine with Peruvian ingredients.","In-N-Out Burgers, \
+        doing business as In-N-Out Burger, is an American regional chain of fast food restaurants with \
+        locations primarily in California","Kyochon Chicken offers crispy, flavorful chicken with a variety of sauces. \
+        Experience the perfect blend of taste and quality.","Parks BBQ remains an icon and a culinary outlet among chefs, food writers, diplomats, \
+        and everyone in between at the center of Koreatown."],["London, the capital of England and the United Kingdom, \
+        is a 21st-century city with history stretching back to Roman times. ","Los Angeles is a sprawling Southern California \
+        city and the center of the nation’s film and television industry.","New York City comprises 5 \
+        boroughs sitting where the Hudson River meets the Atlantic Ocean. \
+        At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, \
+        financial and cultural centers.","Tokyo, Japan’s busy capital, mixes the ultramodern \
+        and the traditional, from neon-lit skyscrapers to historic temples. \
+        The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. "]]
          
         document.getElementById("main_img").src = images[categoryIndex][dataIndex];
         document.getElementById("text1").innerText = text_set1[categoryIndex][dataIndex];
@@ -455,6 +485,7 @@
             document.getElementById(imageID[i]).src = images[categoryIndex][image_set[dataIndex][i]];
             document.getElementById(linkId[i]).href = "select_page.html?data=" + image_set[dataIndex][i] + "&category="+categoryIndex;
         }
+        
         
     </script>
 
