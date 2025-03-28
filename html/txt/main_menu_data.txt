@@ -1,0 +1,20 @@
+[music]
+Beyonce, Cowboy Carter / 2024 / 8.4 out of 10
+Galantis, The Aviary / 2017 / 6.4 out of 10
+Seong-Jin Cho, Chopin: Piano Concerto No. 2; Scherzi / 2021 / 9.0 out of 10
+AC/DC, Back in Black / 1980 / 8.8 out of 10
+[movie]
+Joker, Todd Phillips / 2019 / 8.9 out of 10
+Avengers: Endgame, Russo Brothers / 2019 / 8.3 out of 10
+Star Wars: Episode III - Revenge of the Sith, George Lucas / 2005 / 8.0 out of 10
+Black Hawk Down, Ridley Scott / 2001 / 7.9 out of 10
+[food]
+Nobu, Los Angeles / Japanese / 4.3 out of 5
+In-N-Out Burger, Huntington Park / Hamburger / 4.6 out of 5
+Kyochon Chicken, Los Angeles / Fried Chicken / 4.0 out of 5
+Park's BBQ, Los Angeles / Korean Barbecue / 4.4 out of 5
+[etc]
+London, UK / UTC+0 / 4.0 out of 5
+Los Angeles, CA, USA / UTC−08:00 / 4.5 out of 5
+New York City, NY, USA / UTC−05:00 / 4.0 out of 5
+Tokyo, Japan / UTC+09:00 / 4.8 out of 5

@@ -1,0 +1,20 @@
+[music]
+Cowboy Carter\Beyonce\2024\Country\8.4\The follow-up to Renaissance is a powerful and ambitious country album cast in the singular mold of Beyonce. She asserts her rightful place in the genre as only a pop star of her incredible talent and influence can do.(Pitchfork)
+The Aviary\Galantis\2017\Electronic\6.4\Swedish pop duo Galantis are gleeful vocal manipulators who have written for the likes of Britney Spears and Icona Pop. On their new LP, their maximalism takes on the halting sounds of tropical house. (Pitchfork)
+Chopin: Piano Concerto No. 2; Scherzi\Seong-Jin Cho\2021\Classical\9.0\The drama, lyricism, rhythm and articulation which different pianists bring to the four Scherzi are as individual to the set as the four scherzi to each other. Cho dazzles with his technical prowess throughout, exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)
+Back in Black\AC/DC\1980\Rock\8.8\For many bands, the sudden and horrific death of their lead singer at the peak of their popularity would be a career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)
+[movie]
+Joker, Todd Phillips / 2019 / 8.9 out of 10
+Avengers: Endgame, Russo Brothers / 2019 / 8.3 out of 10
+Star Wars: Episode III - Revenge of the Sith, George Lucas / 2005 / 8.0 out of 10
+Black Hawk Down, Ridley Scott / 2001 / 7.9 out of 10
+[food]
+Nobu, Los Angeles / Japanese / 4.3 out of 5
+In-N-Out Burger, Huntington Park / Hamburger / 4.6 out of 5
+Kyochon Chicken, Los Angeles / Fried Chicken / 4.0 out of 5
+Park's BBQ, Los Angeles / Korean Barbecue / 4.4 out of 5
+[etc]
+London, UK / UTC+0 / 4.0 out of 5
+Los Angeles, CA, USA / UTC−08:00 / 4.5 out of 5
+New York City, NY, USA / UTC−05:00 / 4.0 out of 5
+Tokyo, Japan / UTC+09:00 / 4.8 out of 5

@@ -144,7 +144,7 @@
     .text_box_class{
         all:unset;
         width:90%;
-        height:20%;
+        height:90%;
         font-size: 25px;
         color:white;
         font-family: 'CustomFont';
@@ -284,14 +284,14 @@
     <div class="header">
         <!--logo image-->
         <div class="logo_img">
-            <a href="main.html"><img class="logo" src="./images/Logo.png" /></a>  
+            <a href="index.html"><img class="logo" src="./images/Logo.png" /></a>  
         </div>
         <!--menu division next to logo image-->
         <div class="menu_div">
-            <a href="main_menu_selection.html" class="menu">Movie</a>
-            <a href="main_menu_selection.html" class="menu">Music</a>
-            <a href="main_menu_selection.html" class="menu">Food</a>
-            <a href="main_menu_selection.html" class="menu">etc.</a>
+            <a href="main_menu_selection.html?category=1" class="menu">Movie</a>
+            <a href="main_menu_selection.html?category=0" class="menu">Music</a>
+            <a href="main_menu_selection.html?category=2" class="menu">Food</a>
+            <a href="main_menu_selection.html?category=3" class="menu">etc.</a>
             <!--button image-->
             <button class="search_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 101 101" id="search">
@@ -317,10 +317,10 @@
 
         <div class="box2">
             <div class = "text_box">
-                <input type = "text" class = "text_box_class" placeholder="Enter album name"/>
-                <input type = "text" class = "text_box_class" placeholder="Enter artist name"/>
-                <input type = "text" class = "text_box_class" placeholder="Enter album year"/>
-                <input type = "text" class = "text_box_class" placeholder="Enter album genre"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter album name" id="placeholder1"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter artist name"id="placeholder2"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter album year"id="placeholder3"/>
+                <input type = "text" class = "text_box_class" placeholder="Enter album genre"id="placeholder4"/>
 
             </div>
 
@@ -330,10 +330,10 @@
             <div class="dropdown">
                 <button class="dropdown_btn"><p>Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  +</p></button>
                 <div class="content_dropdown">
-                    <p class="content_ex">Movie</p>
-                    <p class="content_ex">Music</p>
-                    <p class="content_ex">Food</p>
-                    <p class="content_ex">etc.</p>
+                    <p class="content_ex" id="category1" onclick="cat_click_movie()">Movie</p>
+                    <p class="content_ex" id="category0" onclick="cat_click_music()">Music</p>
+                    <p class="content_ex" id="category2" onclick="cat_click_food()">Food</p>
+                    <p class="content_ex" id="category3" onclick="cat_click_etc()">etc.</p>
                 </div>  
             </div>
         </div>
@@ -342,10 +342,10 @@
 
     <div class = "row2">
         <div class="slider">
-            <input type="range" min="0" max="10" value="0" class="score" step="0.1"/>
+            <input type="range" min="0" max="10" value="0" class="score" step="0.1" id="scoreval"/>
         </div>
         <div class = "score_text_box">
-            <p class="score_text">0</p>
+            <p class="score_text" id="scoretxt">0</p>
         </div>
 
     </div>
@@ -353,7 +353,7 @@
     <div class = "row3">
         <div class = "write_box">
             <div class = "text_box">
-                <input type = "text" class = "text_box_class" placeholder="Write"/>
+                <textarea type = "text" class = "text_box_class" placeholder="Write" id="writebox"></textarea>
 
             </div>
 
@@ -372,6 +372,9 @@
 
     </div>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dataIndex = parseInt(urlParams.get('data'));
+        const categoryIndex = parseInt(urlParams.get('category'));
         const dropdown_btn = document.querySelector('.dropdown_btn');
         const content_dropdown = document.querySelector('.content_dropdown');
         dropdown_btn.addEventListener('click',()=>{
@@ -380,13 +383,116 @@
             }else{
                 content_dropdown.style.maxHeight = content_dropdown.scrollHeight + 'px';
             }
+
         });
+        const categorynum=[0,1,2,3];
+        const categorycolor=[["red","black","black","black"],["black","red","black","black"],["black","black","red","black"],["black","black","black","red"]];
+        for(var i = 0;i<4;i++){
+            document.getElementById("category"+i).style.color = categorycolor[categoryIndex][i]
+        }
 
         const score = document.querySelector('.score');
         const score_text = document.querySelector('.score_text');
         score.addEventListener('input',()=>{
             score_text.textContent = score.value;
         });
+
+        const images = [["img_example/Music/cowboy carter.jpg", "img_example/Music/edm.jpg", 
+                        "img_example/Music/piano.jpg", "img_example/Music/guitar.jpg"],
+                        ["img_example/Movie/joker.jpg","img_example/Movie/avengers.jpg",
+                        "img_example/Movie/star wars.jpg","img_example/Movie/war.jpg"],
+                        ["img_example/Food/sushi.jpg","img_example/Food/in n out.jpg",
+                        "img_example/Food/chicken.jpg","img_example/Food/bbq.jpg"],
+                        ["img_example/etc/london.jpg","img_example/etc/los angeles.jpg",
+                        "img_example/etc/new york.jpg","img_example/etc/tokyo.jpg"] ]
+
+        const image_set = [[1,2,3] ,[0,2,3], [0,1,3], [0,1,2]]
+
+        const text_set1 = [["Cowboy Carter", "The Aviary","Chopin...Scherzi", "Back in Black"],
+        ["Joker","Avengers: Endgame","Star Wars: Episode III ","Black Hawk Down"],
+        ["Nobu","In-N-Out Burger","Kyochon Chicken","Park's BBQ"],
+        ["London","Los Angeles,","New York City","Tokyo"]]
+        const text_set2 = [["Beyonce", "Galantis", "Seong-Jin Cho", "AC/DC"],["Todd Phillips","Russo Brothers","George Lucas","Ridley Scott"],
+        ["Los Angeles","Huntington Park","Los Angeles","Los Angeles"],["UK","CA, USA","NY, USA","Japan"]]
+        const text_set3 = [["2024", "2017", "2021", "1980"],["2019","2019","2005","2001"],["noburestaurants.com","www.in-n-out.com","www.kyochonus.com","parksbbq.com"],
+        ["Population: 8.8 million","Population: 3.8 million","Population: 8.2 million","Population: 14.1 million"]]
+        const text_set4 = [["Country", "Electronic" ,"Classical", "Rock"],["Comedy/Romance","Action/Sci-fi","Sci-fi/Action","War/Action"],
+        ["Japanese","Hamburger","Fried Chicken","Korean Barbecue"],["UTC+0","UTC−08:00","UTC−05:00","UTC+09:00"]]
+
+        const score_set = [["8.4" ,"6.4", "9.0", "8.8"],["8.9","8.3","8.0","7.9"],["4.3","4.6","4.0","4.4"],["4.0","4.5","4.0","4.8"]]
+
+        const comment_set = [["The follow-up to Renaissance is a powerful and ambitious country album cast \
+        in the singular mold of Beyonce. She asserts her rightful place in the genre as only a pop star of \
+        her incredible talent and influence can do.(Pitchfork)", "Swedish pop duo Galantis are gleeful vocal \
+        manipulators who have written for the likes of Britney Spears and Icona Pop. On their new LP, \
+        their maximalism takes on the halting sounds of tropical house. (Pitchfork)", "The drama, lyricism, rhythm \
+        and articulation which different pianists bring to the four Scherzi are as individual to the \
+        set as the four scherzi to each other. Cho dazzles with his technical prowess throughout, \
+        exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)", "For many bands,\
+         the sudden and horrific death of their lead singer at the peak of their popularity would be a \
+         career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)"]
+        ,["Subtlety is not Phillips’s strong point. What he does have is an eye for a well-chosen location, \
+        an ear for a provocative line of dialogue and a finger on the pulse of very marketable, confrontational \
+        (if also “cynical”) entertainment. The Observer (UK)","Generous in humor, spirit and sentimentality, \
+        Anthony and Joe Russo's Endgame is a surprisingly full feast of blockbuster-making that, through some \
+        time-traveling magic, looks back nostalgically at Marvel's decade of world domination. (AP)","Emerges as the best in the overall series since \
+        \"The Empire Strikes Back\" (Variety)","I've rarely seen so selfless a collection of performances and, \
+        in a war movie, so general an absence of rhetoric or guff. (The New Yorker)"],["Nobu Matsuhisa is a globally-renowned chef, \
+        most well-known for his unique take on traditional Japanese cuisine with Peruvian ingredients.","In-N-Out Burgers, \
+        doing business as In-N-Out Burger, is an American regional chain of fast food restaurants with \
+        locations primarily in California","Kyochon Chicken offers crispy, flavorful chicken with a variety of sauces. \
+        Experience the perfect blend of taste and quality.","Parks BBQ remains an icon and a culinary outlet among chefs, food writers, diplomats, \
+        and everyone in between at the center of Koreatown."],["London, the capital of England and the United Kingdom, \
+        is a 21st-century city with history stretching back to Roman times. ","Los Angeles is a sprawling Southern California \
+        city and the center of the nation’s film and television industry.","New York City comprises 5 \
+        boroughs sitting where the Hudson River meets the Atlantic Ocean. \
+        At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, \
+        financial and cultural centers.","Tokyo, Japan’s busy capital, mixes the ultramodern \
+        and the traditional, from neon-lit skyscrapers to historic temples. \
+        The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. "]]
+
+
+        document.getElementById("placeholder1").value = text_set1[categoryIndex][dataIndex];
+        console.log(text_set1[categoryIndex][dataIndex]);
+        document.getElementById("placeholder2").value = text_set2[categoryIndex][dataIndex];
+        document.getElementById("placeholder3").value = text_set3[categoryIndex][dataIndex];
+        document.getElementById("placeholder4").value = text_set4[categoryIndex][dataIndex];
+
+        document.getElementById("scoretxt").innerText = score_set[categoryIndex][dataIndex];
+        document.getElementById("scoreval").value = score_set[categoryIndex][dataIndex];
+
+        document.getElementById("writebox").value = comment_set[categoryIndex][dataIndex];
+
+        function cat_click_movie(){
+            for(var i = 0;i<4;i++){
+                document.getElementById("category"+i).style.color = categorycolor[1][i]
+            }
+        }
+        function cat_click_food(){
+            for(var i = 0;i<4;i++){
+                document.getElementById("category"+i).style.color = categorycolor[2][i]
+            }
+            
+        }
+
+        function cat_click_music(){
+            for(var i = 0;i<4;i++){
+                document.getElementById("category"+i).style.color = categorycolor[0][i]
+            }
+            
+            
+        }
+
+        function cat_click_etc(){
+            for(var i = 0;i<4;i++){
+                document.getElementById("category"+i).style.color = categorycolor[3][i]
+            }
+            
+            
+        }
+
+
+
 
     </script>
 </body>
