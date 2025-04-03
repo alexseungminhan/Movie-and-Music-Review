@@ -1,20 +1,25 @@
 [music]
 Cowboy Carter\Beyonce\2024\Country\8.4\The follow-up to Renaissance is a powerful and ambitious country album cast in the singular mold of Beyonce. She asserts her rightful place in the genre as only a pop star of her incredible talent and influence can do.(Pitchfork)
 The Aviary\Galantis\2017\Electronic\6.4\Swedish pop duo Galantis are gleeful vocal manipulators who have written for the likes of Britney Spears and Icona Pop. On their new LP, their maximalism takes on the halting sounds of tropical house. (Pitchfork)
-Chopin: Piano Concerto No. 2; Scherzi\Seong-Jin Cho\2021\Classical\9.0\The drama, lyricism, rhythm and articulation which different pianists bring to the four Scherzi are as individual to the set as the four scherzi to each other. Cho dazzles with his technical prowess throughout, exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)
-Back in Black\AC/DC\1980\Rock\8.8\For many bands, the sudden and horrific death of their lead singer at the peak of their popularity would be a career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)
+Chopin...Scherzi\Seong-Jin Cho\2021\Classical\9.0\The drama, lyricism, rhythm and articulation which different pianists bring to the four Scherzi are as individual to the set as the four scherzi to each other. Cho dazzles with his technical prowess throughout, exhibiting much agility and dexterity but also gentle poetry. (The Classic Review)\
+Back in Black\AC/DC\1980\Rock\8.8\For many bands, the sudden and horrific death of their lead singer at the peak of their popularity would be a career-ender. AC/DC took a few weeks to regroup and then recorded one of the biggest albums of all time. (Pitchfork)\
 [movie]
-Joker, Todd Phillips / 2019 / 8.9 out of 10
-Avengers: Endgame, Russo Brothers / 2019 / 8.3 out of 10
-Star Wars: Episode III - Revenge of the Sith, George Lucas / 2005 / 8.0 out of 10
-Black Hawk Down, Ridley Scott / 2001 / 7.9 out of 10
+Joker\Todd Phillips\2019\Comedy/Romance\8.9\Subtlety is not Phillips’s strong point. What he does have is an eye for a well-chosen location, an ear for a provocative line of dialogue and a finger on the pulse of very marketable, confrontational (if also “cynical”) entertainment. The Observer (UK)
+Avengers: Endgame\Russo Brothers\2019\Action/Sci-fi\8.3\Generous in humor, spirit and sentimentality, Anthony and Joe Russo's Endgame is a surprisingly full feast of blockbuster-making that, through some time-traveling magic, looks back nostalgically at Marvel's decade of world domination. (AP)
+Star Wars: Episode III\George Lucas\2005\Sci-fi/Action\8.0\Emerges as the best in the overall series since "The Empire Strikes Back" (Variety)
+Black Hawk Down\Ridley Scott\2001\War/Action\7.9\"I've rarely seen so selfless a collection of performances and, in a war movie, so general an absence of rhetoric or guff. (The New Yorker)
 [food]
-Nobu, Los Angeles / Japanese / 4.3 out of 5
-In-N-Out Burger, Huntington Park / Hamburger / 4.6 out of 5
-Kyochon Chicken, Los Angeles / Fried Chicken / 4.0 out of 5
-Park's BBQ, Los Angeles / Korean Barbecue / 4.4 out of 5
+Nobu\Los Angeles\noburestaurants.com\Japanese\4.3\Nobu Matsuhisa is a globally-renowned chef, most well-known for his unique take on traditional Japanese cuisine with Peruvian ingredients.
+In-N-Out Burger\Huntington Park\www.in-n-out.com\Hamburger\4.6\In-N-Out Burgers, doing business as In-N-Out Burger, is an American regional chain of fast food restaurants with locations primarily in California
+Kyochon Chicken\Los Angeles\www.kyochonus.com\Fried Chicken\4.0\Kyochon Chicken offers crispy, flavorful chicken with a variety of sauces. Experience the perfect blend of taste and quality.
+Park's BBQ\Los Angeles\parksbbq.com\Korean Barbecue\4.4\Parks BBQ remains an icon and a culinary outlet among chefs, food writers, diplomats, and everyone in between at the center of Koreatown
 [etc]
-London, UK / UTC+0 / 4.0 out of 5
-Los Angeles, CA, USA / UTC−08:00 / 4.5 out of 5
-New York City, NY, USA / UTC−05:00 / 4.0 out of 5
-Tokyo, Japan / UTC+09:00 / 4.8 out of 5
+London\UK\Population: 8.8 million\UTC+0\4.0\London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.
+Los Angeles,\CA, USA\Population: 3.8 million\UTC−08:00\4.5\Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry.
+New York City,\NY, USA\Population: 8.2 million\UTC−05:00\4.0\New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers.
+Tokyo\Japan\Population: 14.1 million\UTC+09:00\4.8\Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods.
+[images]
+img_example/Music/cowboy carter.jpg\img_example/Music/edm.jpg\img_example/Music/piano.jpg\img_example/Music/guitar.jpg
+img_example/Movie/joker.jpg\img_example/Movie/avengers.jpg\img_example/Movie/star wars.jpg\img_example/Movie/war.jpg
+img_example/Food/sushi.jpg\img_example/Food/in n out.jpg\img_example/Food/chicken.jpg\img_example/Food/bbq.jpg
+img_example/etc/london.jpg\img_example/etc/los angeles.jpg\img_example/etc/new york.jpg\img_example/etc/tokyo.jpg
